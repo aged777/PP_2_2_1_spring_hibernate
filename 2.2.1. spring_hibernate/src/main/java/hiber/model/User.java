@@ -19,7 +19,8 @@ public class User {
    @Column(name = "email")
    private String email;
 
-   @OneToOne(mappedBy = "users")
+   @OneToOne
+   @JoinColumn(name = "id")
    private Car car;
 
    public User() {}
