@@ -12,6 +12,10 @@ public class Car {
     private String model;
     @Column(name = "series")
     private int series;
+    @OneToOne
+    @JoinColumn(name = "id")
+    @MapsId
+    private User user;
 
     public Car() {
 
@@ -46,4 +50,14 @@ public class Car {
     public int getSeries() {
         return series;
     }
+
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
 }
